@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Oct  3 11:09:41 2016
-
-@author: Vergil
-"""
-
 import re
 import nltk
 from nltk import PCFG
@@ -13,25 +6,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tree import *
 from nltk.draw import tree
 import sys
-
-s="""
-S : NP VP 1.0;
-VP : Vi 0.2
-    | Vt NP 0.5
-    | VP PP 0.2;        # VP not sum up to 1.0
-NP : DT NN 0.8          # missing rule for DT
-    | NP PP 0.2;
-PP : IN NP 1.0          # missing ; for end rule
-Vi -> sleeps 1.0;	# rule should not use ->
-Vt : saw 1.0;
-NN : man 0.1
-     woman 0.1          # missing |
-    | telescope 0.3
-    | dog 0.5;
-IN : with 0.6
-    | in 0.4;
-W = The man saw the dog with the telescope.
-"""
 
 
 #==============================================================================
